@@ -1,0 +1,122 @@
+@media (max-width: 767px) {
+    nav {
+        position: static;
+
+        &.open ul {
+            top: 60px;
+        }
+
+        ul {
+            width: 100%;
+            position: fixed;
+            top: -(60px * 3) + 60px;
+            -webkit-transition: top 0.5s ease-in-out;
+            z-index: 10;
+        }
+
+        li {
+            width: 50%;
+            display: block;
+            float: left;
+            background-color: @color-background;
+        }
+
+        .nav-right {
+        }
+
+        .nav-toggle {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            display: block;
+            background-color: @color-background;
+            font-size: 150%;
+        }
+    }
+
+    header {
+        padding-top: 20px;
+
+        .actions {
+            a {
+                margin: 0 40px;
+                width: auto;
+                display: block;
+                line-height: 80px;
+
+                &.sponsor {
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 0;
+                    border-top-right-radius: 5px;
+                }
+
+                &.register {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+            }
+        }
+    }
+
+    .about {
+        .about-block {
+            float: none;
+            width: auto;
+            padding: 40px 0 20px;
+            margin: 0;
+            h3 {
+                small::before {
+                    // Easy line breaks
+                    content: ' ';
+                    visibility: hidden;
+                    width: 0;
+                    height: 0;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .sponsors {
+        .clearfix();
+        background-color: @color-sponsors-background;
+        padding: 20px 0;
+
+        .sponsors-inner {
+            padding: 10px;
+
+            a {
+                padding: 0 10px;
+
+                &.sponsors-huge {
+                    width: 100%;
+                }
+
+                &.sponsors-large {
+                    width: 50%;
+                }
+
+                &.sponsors-medium {
+                    width: 50%;
+                }
+
+                &.sponsors-small {
+                    width: 50%;
+                }
+            }
+        }
+
+        h2 {
+            color: @color-heading-text;
+            font-family: @font-heading;
+            text-transform: uppercase;
+            padding: 20px;
+        }
+
+    }
+        
+
+}
+

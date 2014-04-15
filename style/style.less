@@ -1,0 +1,307 @@
+// ----------------------------------------------------------------------------
+// Variables
+// ----------------------------------------------------------------------------
+
+@magenta: #A70267;
+@red: #F10C49;
+@orange: #FB6B41;
+@yellow: #F6D86B;
+@blue: #339194;
+
+@color-nav-text: white;
+@color-nav-hover: @magenta;
+@color-header-text: white;
+@color-button-primary: @blue;
+@color-button-secondary: @orange;
+@color-heading-text: black;
+@color-heading-link: @blue;
+
+@color-background: #202029;
+@color-about-background: #faf7f5;
+@color-sponsors-background: white;
+
+@font-heading: 'texgyreadventor', 'ITC Avant Garde', 'Avant Garde', 'Century Gothic', sans-serif;
+
+body {
+    margin: 0;
+    padding: 0;
+    background: @color-background url('/img/bg.jpg') top center no-repeat fixed;
+    font: 16px 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+img {
+    max-width: 100%;
+    border: none;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.row {
+    .clearfix();
+}
+
+.anchor {
+    padding-top: 80px;
+    margin-top: -80px;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.clearfix() {
+    &::after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+.border-box() {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+// ----------------------------------------------------------------------------
+// Navigation
+// ----------------------------------------------------------------------------
+
+nav {
+    .clearfix();
+
+    position: fixed;
+    width: 100%;
+    font-family: @font-heading;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        padding: 0;
+        list-style: none;
+        display: inline-block;
+    }
+
+    a {
+        -webkit-transition: color 0.15s ease-in-out;
+        padding: 0 20px;
+        display: block;
+        color: @color-nav-text;
+        text-decoration: none;
+        line-height: 60px;
+
+        &:hover {
+            color: @color-nav-hover;
+        }
+
+    }
+
+    .nav-right {
+        // This puts the elements out of order, but whatever
+        float: right;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+}
+
+header {
+    padding: 90px 0 40px;
+    text-align: center;
+    color: @color-header-text;
+    font-family: @font-heading;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    .brand {
+        padding: 35px 10px 15px;
+
+        h1 {
+            padding: 5px 0;
+            margin: 0 auto;
+            max-width: 602px;
+            font-size: 80px;
+        }
+        h2 {
+            padding: 5px 0;
+            margin: 0;
+            font-size: 30px;
+            line-height: 40px;
+        }
+    }
+
+    .eventinfo {
+        padding: 20px 0;
+        font-size: 22px;
+        line-height: 30px;
+
+        p {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .actions {
+        padding: 30px 0;
+        a {
+            display: inline-block;
+            width: 30%;
+            color: white;
+            text-decoration: none;
+            font-size: 32px;
+            line-height: 100px;
+            -webkit-transition: all 0.15s ease-in-out;
+
+            &.sponsor {
+                @color: @color-button-secondary;
+                background-color: @color;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border-bottom: 3px solid darken(@color, 10%);
+
+                &:hover {
+                    background-color: darken(@color, 5%);
+                    border-bottom: 3px solid darken(@color, 20%);
+                }
+                
+                &:active {
+                    background-color: lighten(@color, 5%);
+                    border-bottom: 3px solid darken(@color, 5%);
+                }
+            }
+
+            &.register {
+                @color: @color-button-primary;
+                background-color: @color;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                border-bottom: 3px solid darken(@color, 10%);
+
+                &:hover {
+                    background-color: darken(@color, 5%);
+                    border-bottom: 3px solid darken(@color, 20%);
+                }
+                
+                &:active {
+                    background-color: lighten(@color, 5%);
+                    border-bottom: 3px solid darken(@color, 5%);
+                }
+            }
+        }
+    }
+}
+
+.about {
+    .clearfix();
+
+    background-color: @color-about-background;
+    padding: 20px 0 50px;
+
+    .about-block {
+        float: left;
+        width: 50%;
+        padding: 40px 0 20px;
+        margin: 0;
+
+        h3 {
+            color: @color-heading-text;
+            padding: 0 20px;
+            margin: 0;
+            font-size: 80px;
+            line-height: 30px;
+            font-weight: 100;
+            font-family: @font-heading;
+            text-transform: uppercase;
+
+            small {
+                font-size: 30px;
+                font-weight: bold;
+                white-space: nowrap;
+            }
+        }
+
+        p {
+            padding: 20px 20px 0;
+            margin: 0;
+            line-height: 1.5em;
+        }
+    }
+}
+
+.sponsors {
+    .clearfix();
+    background-color: @color-sponsors-background;
+    padding: 20px 0;
+
+    .sponsors-inner {
+        // Shrink the padding
+        padding: 0 60px;
+
+        a {
+            .border-box();
+            float: left;
+            text-align: center;
+            padding: 10px 40px;
+            
+
+            &.sponsors-huge {
+                width: 100%;
+            }
+
+            &.sponsors-large {
+                width: 50%;
+            }
+
+            &.sponsors-medium {
+                width: 33%;
+            }
+
+            &.sponsors-small {
+                width: 25%;
+            }
+        }
+    }
+
+    h2 {
+        color: @color-heading-text;
+        font-family: @font-heading;
+        text-transform: uppercase;
+        padding: 20px;
+        text-align: center;
+        
+        a {
+            color: @color-heading-link;
+            text-decoration: none;
+            -webkit-transition: color 0.15s ease-in-out;
+
+            &:hover {
+                color: darken(@color-heading-link, 10%);
+            }
+        }
+    }
+
+}
+
+@import 'mobile.less';
