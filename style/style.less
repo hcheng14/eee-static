@@ -247,6 +247,10 @@ header {
             margin: 0;
             line-height: 1.5em;
         }
+
+        a {
+            text-decoration: none;
+        }
     }
 }
 
@@ -264,16 +268,18 @@ header {
             .border-box();
             float: left;
             text-align: center;
-            padding: 10px 40px;
-            
-
+            padding: 0 0;
+            font-size: 0;
+            img {
+                vertical-align: middle
+            }
             &.sponsors-huge {
                 width: 100%;
             }
 
             &.sponsors-large {
-                width: 50%;
-            }
+                width: 50%;                                
+            }            
 
             &.sponsors-medium {
                 width: 33%;
@@ -282,6 +288,13 @@ header {
             &.sponsors-small {
                 width: 25%;
             }
+        }
+        a:before {
+            content: '';
+            display: inline-block;
+            height: 100%; 
+            vertical-align: middle;
+            margin-right: -0.25em; /* Adjusts for spacing */
         }
     }
 
